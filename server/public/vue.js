@@ -7,7 +7,7 @@ var app = new Vue({
   },
   methods: {
     getdata: ()=>{
-      axios.get('http://localhost:3000/api/quote/random')
+      axios.get('/api/quote/random')
         .then(response =>{
           app.quote = response.data.quote
           app.author = response.data.author || 'Unknown'
