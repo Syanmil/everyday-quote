@@ -20,7 +20,7 @@ mongoose.Promise = global.Promise;
 
 mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
 mongoose.connection.once('open', function() {
-  console.log(`connected to Port ${process.env.PORT} At ${process.env.MONGODB_URI}`);
+  console.log(`connected to Port ${process.env.PORT} At 'mongodb://localhost/everydayQuote'`);
 });
 
 // view engine setup

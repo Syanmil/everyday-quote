@@ -2,7 +2,7 @@ var QuotesModel = require('./models/QuotesModel.js');
 var mongoose = require('mongoose')
 require('dotenv').config()
 
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect('mongodb://localhost/everydayQuote')
 
 let seedData = [
   {
