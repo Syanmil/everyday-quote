@@ -5,11 +5,21 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var cors = require('cors')
+require('dotenv').config()
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+//Database
+mongoose.connect(process.env.MONGODB_URI);
+mongoose.Promise = global.Promise;
+
+mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
+mongoose.connection.once('open', function() {
+  console.log(`connected to Port ${process.env.PORT} At ${process.env.MONGODB_URI}`);
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
