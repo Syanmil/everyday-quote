@@ -15,7 +15,7 @@ var quote = require('./routes/QuotesRoutes')
 var app = express();
 
 //Database
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect('mongodb://localhost/everydayQuote');
 mongoose.Promise = global.Promise;
 
 mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
