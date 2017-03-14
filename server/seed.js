@@ -1,6 +1,5 @@
 var QuotesModel = require('./models/QuotesModel.js');
 var mongoose = require('mongoose')
-require('dotenv').config()
 
 mongoose.connect('mongodb://localhost/everydayQuote')
 
@@ -46,10 +45,8 @@ let seedData = [
     "author": "Epictetus, Stoic philosopher.",
   }
 ]
-function seed(data) {
-  QuotesModel.collection.insertMany(seedData, function(err, quote){
-    if(err){console.log(err);}
-    console.log(quote);
-  })
-}
-seed(seedData)
+// function seed(data) {
+QuotesModel.insertMany(seedData)
+//   return
+// }
+// seed(seedData)
